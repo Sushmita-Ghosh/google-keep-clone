@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./App.css";
 import React, { useState } from "react";
 import Header from "../src/components/header/header.component";
@@ -143,6 +144,13 @@ function App() {
       <Footer />
     </div>
   );
+=======
+import logo from "./logo.svg";
+import "./App.css";
+
+function App() {
+  return <div className="App"></div>;
+>>>>>>> dc9a003 (created readme)
 }
 
 export default App;
