@@ -18,6 +18,11 @@ const Note = ({ title, content, deleteItem, id, editItem }) => {
       id: 3,
       name: "mediumseagreen",
     },
+
+    {
+      id: 4,
+      name: "wheat",
+    },
   ];
 
   // to check if color is present or not and render accordingly

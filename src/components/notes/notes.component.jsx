@@ -29,7 +29,6 @@ const Notes = (props) => {
 
   const editTriggerHandler = () => {
     props.editItemChange(props.note);
-
     props.setNote({
       title: "",
       content: "",
