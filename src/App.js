@@ -7,7 +7,7 @@ import Note from "./components/note/note.component";
 import SearchBox from "./components/search-box/search-box.component";
 
 function App() {
-  // for adding the note , also addNote consits of all the notes
+  // for adding the note , also notes consits of all the notes
   const [notes, setNotes] = useState([]);
 
   //for each note
@@ -23,6 +23,10 @@ function App() {
   //to get the selected item when we click on edit button in notes
 
   const [isEditItem, setIsEditItem] = useState(null);
+
+  // for the search functionality
+  const [searchField, setSearchField] = useState(" ");
+  const [searchResults, setSearchResults] = useState([]);
 
   // function to show all the notes
   const addNotes = (note) => {
@@ -83,11 +87,36 @@ function App() {
     setIsEditItem(id);
   };
 
+  // for searching the terms
+
+  const searchHandler = (searchField) => {
+    setSearchField(searchField);
+
+    // console.log(searchField);
+    // if our search term is not empty then
+    if (searchField !== "") {
+      const filteredSearchNotes = notes.filter((note) => {
+        //console.log(Object.values(note));
+
+        return Object.values(note)
+          .join("")
+          .toLowerCase()
+          .includes(searchField.toLowerCase());
+      });
+
+      // once we have filtered , set the searchResults to the newNotes
+      setSearchResults(filteredSearchNotes);
+    } else {
+      // if the search field is empty set it to notes array
+      setSearchResults(notes);
+    }
+  };
+
   return (
     <div className="App">
       <Header />
 
-      <SearchBox />
+      <SearchBox searchField={searchField} searchHandler={searchHandler} />
 
       <Notes
         passNote={addNotes}
@@ -97,7 +126,7 @@ function App() {
         editItemChange={changeEdittedItemsInNotesHandler}
       />
       <div className="notes">
-        {notes.map((item, index) => {
+        {(searchField.length < 1 ? notes : searchResults).map((item, index) => {
           return (
             <Note
               title={item.title}
