@@ -198,18 +198,20 @@ function App() {
             editItemChange={changeEdittedItemsInNotesHandler}
           />
           <div className="notes">
-            {notes.map((item, index) => {
-              return (
-                <Note
-                  title={item.title}
-                  content={item.content}
-                  id={index} // for deletion purpose we need the id
-                  key={index}
-                  deleteItem={onDeleteHandler}
-                  editItem={onEditHandler}
-                />
-              );
-            })}
+            {(searchField.length < 1 ? notes : searchResults).map(
+              (item, index) => {
+                return (
+                  <Note
+                    title={item.title}
+                    content={item.content}
+                    id={index} // for deletion purpose we need the id
+                    key={index}
+                    deleteItem={onDeleteHandler}
+                    editItem={onEditHandler}
+                  />
+                );
+              }
+            )}
           </div>
 
           <Footer />
