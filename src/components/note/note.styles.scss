@@ -1,0 +1,101 @@
+.note {
+  margin: 30px;
+  width: 300px;
+  padding: 30px;
+  border-radius: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .color-div {
+    min-height: 100px;
+    min-width: 120px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 80px;
+    left: 120px;
+    cursor: pointer;
+
+    .item-div {
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      padding: 10px;
+      margin: 10px;
+    }
+  }
+
+  .btn-container {
+    position: relative;
+    padding-top: 50px;
+
+    .button,
+    .button2 {
+      border: none;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      z-index: 1;
+      padding: 5px;
+      transition: 0.3s;
+      cursor: pointer;
+
+      .icon,
+      .icon3 {
+        font-size: 1.5rem;
+        color: rgba(250, 169, 19, 0.952);
+        &:hover {
+          color: #000;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(250, 169, 19, 0.952);
+        color: #000;
+      }
+    }
+
+    .button {
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+    }
+
+    .button2 {
+      position: absolute;
+      right: 100px;
+      bottom: -20px;
+    }
+    .button1 {
+      border: none;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      position: absolute;
+      right: 40px;
+      bottom: -20px;
+      z-index: 1;
+      padding: 5px;
+      transition: 0.3s;
+      cursor: pointer;
+
+      .icon1 {
+        font-size: 1.5rem;
+        color: rgba(250, 169, 19, 0.952);
+        &:hover {
+          color: #000;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(250, 169, 19, 0.952);
+        color: #000;
+      }
+    }
+  }
+}
