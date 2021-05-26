@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import "./App.css";
 import React, { useState } from "react";
 import Header from "../src/components/header/header.component";
@@ -26,16 +25,15 @@ function App() {
   const [isEditItem, setIsEditItem] = useState(null);
 
   // for the search functionality
-  const [searchField, setSearchField] = useState(" ");
+  const [searchField, setSearchField] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   // function to show all the notes
   const addNotes = (note) => {
-    if (toggleSubmit) {
-      setNotes((prevData) => {
-        return [...prevData, note];
-      });
-    }
+    setNotes((prevData) => {
+      return [...prevData, note];
+    });
+
     //console.log(note);
   };
 
@@ -144,13 +142,6 @@ function App() {
       <Footer />
     </div>
   );
-=======
-import logo from "./logo.svg";
-import "./App.css";
-
-function App() {
-  return <div className="App"></div>;
->>>>>>> dc9a003 (created readme)
 }
 
 export default App;
